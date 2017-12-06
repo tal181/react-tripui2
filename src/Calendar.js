@@ -3,10 +3,10 @@ import BigCalendar from 'react-big-calendar';
 import * as action from './actions/action'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-//import Dnd from './dnd'
+import Dnd from './dnd'
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
-
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 BigCalendar.setLocalizer(
   BigCalendar.momentLocalizer(moment)
 );
@@ -24,7 +24,7 @@ class Calendar extends Component {
   render() {
     return (
      <div>
-        momomo
+        <Dnd />
      </div>
     );
   }
