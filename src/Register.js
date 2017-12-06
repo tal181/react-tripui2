@@ -37,7 +37,7 @@ class Register extends Component {
   }
 
   componentDidMount() {
-        this.props.actions.getTest(true)
+
   }
 
   handleMultiChange = (selectedOptions) => {
@@ -65,6 +65,9 @@ class Register extends Component {
        this.setState({
          endDate: date
        });
+   }
+   saveChanges = () => {
+    this.props.actions.saveChanges(this.state)
    }
 
   render() {
@@ -152,8 +155,14 @@ class Register extends Component {
                      </FormGroup>
                      <FormGroup>
                         <Col sm={2}>
-                            <Link to='/calendar'>save</Link>
+                            <Link to='/calendar'>navigate</Link>
                         </Col>
+                         <Col sm={2}>
+                            <button onClick={this.saveChanges}>save</button>
+                        </Col>
+                        <Col sm={2}>
+                           saved data : {this.props.data.email}
+                       </Col>
                      </FormGroup>
               </Form>
              </div>
@@ -165,7 +174,7 @@ class Register extends Component {
 
 function mapStateToProps (state) {
   return {
-       emailEmergency : state.myReducer.emailEmergency
+       data : state.myReducer.data
   }
 }
 
