@@ -18,7 +18,8 @@ import Row from 'react-bootstrap/lib/Row';
 import Form from 'react-bootstrap/lib/Form';
 import FormGroup from 'react-bootstrap/lib/FormGroup';
 import Col from 'react-bootstrap/lib/Col';
-
+import Button from 'react-bootstrap/lib/Button';
+Button
 
 class Register extends Component {
   constructor() {
@@ -166,7 +167,7 @@ class Register extends Component {
                             <Link to='/calendar'>navigate</Link>
                         </Col>
                          <Col sm={2}>
-                            <button onClick={this.saveChanges}>save</button>
+                            <Button bsStyle="primary" onClick={this.saveChanges}>Save</Button>
                         </Col>
                         <Col sm={2}>
                            saved data : {this.props.data.email}
