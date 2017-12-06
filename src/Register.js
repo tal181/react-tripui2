@@ -38,7 +38,7 @@ class Register extends Component {
   }
 
   componentDidMount() {
-
+        this.props.actions.fetchCategories()
   }
 
   handleMultiChange = (selectedOptions) => {
@@ -161,10 +161,7 @@ class Register extends Component {
                                name="form-field-name"
                                value={this.state.selectedOptions}
                                 onChange= {this.handleMultiChange}
-                               options={[
-                                 { value: 'sports', label: 'Sports' },
-                                 { value: 'nightLife', label: 'Night life' },
-                               ]} />
+                               options={this.props.categories} />
                      </Col>
                      </FormGroup>
                      <FormGroup>
@@ -186,7 +183,8 @@ class Register extends Component {
 
 function mapStateToProps (state) {
   return {
-       data : state.myReducer.data
+       data : state.myReducer.data,
+       categories : state.myReducer.categories
   }
 }
 
