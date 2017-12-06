@@ -1,0 +1,28 @@
+{
+  "name": "react-tripui2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.5",
+    "react": "^16.2.0",
+    "react-big-calendar": "^0.17.0",
+    "react-bootstrap": "^0.31.5",
+    "react-datepicker": "^0.61.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "react-select": "^1.1.0",
+    "react-select-box": "^3.0.1",
+    "redux": "^3.5.2",
+    "redux-form": "2.0.0",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
