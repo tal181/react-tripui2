@@ -52,6 +52,13 @@ class Register extends Component {
       this.setState({ email: event.target.value });
       console.log(this.state.email)
    };
+
+  handleBudgetChange = (event) => {
+     this.setState({ budget: event.target.value });
+     console.log(this.state.budget)
+  };
+
+
    handleClick = () => {
         console.log('clicked"')
    }
@@ -66,8 +73,9 @@ class Register extends Component {
          endDate: date
        });
    }
-   saveChanges = () => {
+   saveChanges = (e) => {
     this.props.actions.saveChanges(this.state)
+     e.preventDefault();
    }
 
   render() {
@@ -133,7 +141,7 @@ class Register extends Component {
                            <input
                              type="text"
                              value={this.state.budget}
-                             onChange={this.handleNameChange}
+                             onChange={this.handleBudgetChange}
                            />
                        </Col>
                    </FormGroup>
