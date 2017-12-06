@@ -11,7 +11,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { Link } from 'react-router-dom'
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route,withRouter } from 'react-router-dom';
 
 import PageHeader from 'react-bootstrap/lib/PageHeader';
 import Row from 'react-bootstrap/lib/Row';
@@ -75,8 +75,13 @@ class Register extends Component {
        });
    }
    saveChanges = (e) => {
-    this.props.actions.saveChanges(this.state)
-     e.preventDefault();
+      this.props.actions.saveChanges(this.state)
+      e.preventDefault();
+      this.nextPath('/calendar')
+
+   }
+   nextPath(path) {
+       this.props.history.push(path);
    }
 
   render() {
@@ -163,9 +168,7 @@ class Register extends Component {
                      </Col>
                      </FormGroup>
                      <FormGroup>
-                        <Col sm={2}>
-                            <Link to='/calendar'>navigate</Link>
-                        </Col>
+
                          <Col sm={2}>
                             <Button bsStyle="primary" onClick={this.saveChanges}>Save</Button>
                         </Col>
